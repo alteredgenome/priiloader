@@ -14,7 +14,6 @@ accompanying LICENSE file.
 #include <assert.h>
 
 #include "sha1.h"
-#include "gecko.h"
 
 // print out memory in hexadecimal
 void SHA1::hexPrinter( unsigned char* c, int l )
@@ -23,7 +22,7 @@ void SHA1::hexPrinter( unsigned char* c, int l )
 	assert( l > 0 );
 	while( l > 0 )
 	{
-		gprintf( " %02x", *c );
+		printf( " %02x", *c );
 		l--;
 		c++;
 	}
@@ -200,7 +199,7 @@ unsigned char* SHA1::getDigest(unsigned int* message_digest_array , char bool_re
 }
 void SHA1::hexPrinter_array( unsigned int* message_digest )
 {
-	gprintf( "SHA-1 Hash : %08X %08X %08X %08X %08X\n",
+	printf( "SHA-1 Hash : %08X %08X %08X %08X %08X\n",
 							message_digest[0],
 							message_digest[1],
 							message_digest[2],
